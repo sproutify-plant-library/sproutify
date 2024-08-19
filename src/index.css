@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,13 +19,16 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #2b35e8;
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -33,8 +36,18 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #16a905;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+h2{
+  color: rgb(79, 114, 71);
+}
+
+p{
+  color: #9d2a41f1;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,7 +55,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #978383;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,15 +67,32 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.plantList {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 20px; 
+}
+
+/* flexbox display */
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 20px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px 5px rgb(223, 230, 223);
+  background-color: rgb(222, 225, 228);
+  background-color: #f1f1f1;
+  width: 400px;
+  height: 340px;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 16px rgba(39, 151, 73, 0.716); 
 }
