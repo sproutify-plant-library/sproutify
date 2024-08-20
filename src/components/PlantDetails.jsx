@@ -12,7 +12,7 @@ function PlantDetails() {
 
   const getPlant = () => {
     axios
-      .get(`${API_URL}/plant/${plantId}`)
+      .get(`${API_URL}/${plantId}`)
       .then((response) => {
         setPlant(response.data);
       })
