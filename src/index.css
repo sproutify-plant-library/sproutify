@@ -96,3 +96,82 @@ button:focus-visible {
 .card:hover {
   box-shadow: 0px 8px 16px rgba(39, 151, 73, 0.716); 
 }
+
+.createButtonContainer {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.createButton {
+  background-color: #4a3d73e8;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.createButton:hover {
+  background-color: #6d6dd0b5;
+}
+
+.CreatePlant {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CreatePlant h3 {
+  text-align: center;
+  color: #16a905;
+  margin-bottom: 20px;
+}
+
+.CreatePlant form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.CreatePlant label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.CreatePlant input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.CreatePlant input[type="text"]:focus {
+  border-color: #16a905;
+  outline: none;
+  box-shadow: 0 0 5px rgba(22, 169, 5, 0.5);
+}
+
+.CreatePlant button {
+  padding: 10px 15px;
+  background-color: #16a905;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.CreatePlant button:hover {
+  background-color: #139004;
+}
