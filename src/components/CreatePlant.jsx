@@ -33,7 +33,7 @@ function CreatePlant() {
       .post(`${API_URL}`, newPlant)
       .then((response) => {
         const newPlantId = response.data.id;
-        navigate(`/plant/${newPlant}`);
+        navigate(`/plant/${newPlantId}`);
       })
       .catch((e) => console.log("Error creating a new plant...", e));
   };

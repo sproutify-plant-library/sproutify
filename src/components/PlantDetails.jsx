@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { API_URL } from "../config/api";
 import axios from "axios";
 
@@ -7,6 +7,8 @@ function PlantDetails() {
   const [plant, setPlant] = useState(null);
 
   const { plantId } = useParams();
+
+  const navigate = useNavigate();
 
   const getPlant = () => {
     axios
@@ -19,9 +21,19 @@ function PlantDetails() {
       );
   };
 
+  const deletePlant = () => {
+    axios
+      .delete(`${API_URL}/${plantId}`)
+      .then(response => navigate("/"))
+      .catch(error => console.log("Error deleting plant", error));
+
+  }
+
   useEffect(() => {
     getPlant();
-  }, []);
+  }, [plantId]);
+
+  
   if (plant === null) {
     return "Loader";
   }
@@ -48,6 +60,9 @@ function PlantDetails() {
       <Link to={`/plant/edit/${plantId}`}>
         <button>Edit</button>
       </Link>
+
+      <button onClick={deletePlant}>Delete Plant</button>
+
     </div>
   );
 }
