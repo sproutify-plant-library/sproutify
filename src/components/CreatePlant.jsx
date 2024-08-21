@@ -13,6 +13,7 @@ function CreatePlant() {
   const [tips, setTips] = useState("");
   const [type, setType] = useState("");
   const [maintenance, setMaintenance] = useState("");
+  const [link, setLink] = useState("");
 
   const navigate = useNavigate();
 
@@ -28,7 +29,8 @@ function CreatePlant() {
       sun: sun,
       tips: tips,
       type: type,
-      maintenance: maintenance
+      maintenance: maintenance,
+      link: link
     };
 
     axios
@@ -101,7 +103,7 @@ function CreatePlant() {
         </label>
 
         <label>
-          Water Level:
+          Water:
           <input
             type="text"
             name="water"
@@ -156,7 +158,7 @@ function CreatePlant() {
         </label>
 
         <label>
-          Maintainance:
+          Maintenance:
           <input
             type="text"
             name="maintenance"
@@ -165,6 +167,19 @@ function CreatePlant() {
             value={maintenance}
             onChange={(e) => {
               setMaintenance(e.target.value);
+            }}
+          />
+        </label>
+        <label>
+          Wiki Link:
+          <input
+            type="text"
+            name="wiki Link"
+            placeholder="Link"
+            required
+            value={link}
+            onChange={(e) => {
+              setLink(e.target.value);
             }}
           />
         </label>
