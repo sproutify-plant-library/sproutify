@@ -24,16 +24,14 @@ function PlantDetails() {
   const deletePlant = () => {
     axios
       .delete(`${API_URL}/${plantId}`)
-      .then(response => navigate("/"))
-      .catch(error => console.log("Error deleting plant", error));
-
-  }
+      .then((response) => navigate("/"))
+      .catch((error) => console.log("Error deleting plant", error));
+  };
 
   useEffect(() => {
     getPlant();
   }, [plantId]);
 
-  
   if (plant === null) {
     return "Loader";
   }
@@ -43,13 +41,17 @@ function PlantDetails() {
       {plant && (
         <>
           <h2>{plant.title}</h2>
-          <p>Scientific name: {plant.subtitle}</p>
+          <h4> {plant.subtitle}</h4>
+          <img src={plant.image} alt={plant.title} />
           <p>Description: {plant.description}</p>
           <p>Water Level: {plant.water}</p>
           <p>Sun: {plant.sun}</p>
           <p>Tips: {plant.tips}</p>
           <p>Category: {plant.type}</p>
           <p>Maintainance: {plant.maintenance}</p>
+          <Link to={`${plant.wiki_link}`}>
+            <button className="wikiButton">WikiLink</button>
+          </Link>
         </>
       )}
 
@@ -62,7 +64,6 @@ function PlantDetails() {
       </Link>
 
       <button onClick={deletePlant}>Delete Plant</button>
-
     </div>
   );
 }

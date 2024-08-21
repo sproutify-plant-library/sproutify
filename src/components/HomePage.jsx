@@ -38,8 +38,7 @@ function HomePage() {
               <div className="card" key={elm.id}>
                 <Link to={`/plant/${elm.id}`}>
                   <h2>{elm.title}</h2>
-                  <p>{elm.type}</p>
-                  <p>{elm.maintenance} Maintenance</p>
+                  <img src={`${elm.image}`} alt={elm.title} />
                 </Link>
               </div>
             );

@@ -93,6 +93,20 @@ button:focus-visible {
   transition: box-shadow 0.3s ease;
 }
 
+.card img {
+  width: 40%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) ;
+  transition: transform 0.2s ease-in-out;
+  max-width: 100%;
+}
+
+.card img:hover {
+  transform: scale(1.08); 
+}
+
 .card:hover {
   box-shadow: 0px 8px 16px rgba(39, 151, 73, 0.716); 
 }
@@ -190,10 +204,29 @@ button:focus-visible {
   font-family: 'Inter', sans-serif;
 }
 
+.PlantDetails img {
+  width: 80%; 
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
 .PlantDetails h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
   color: #2e7d32;
+  text-align: center;
+}
+
+.PlantDetails h4 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #818b21;
   text-align: center;
 }
 
