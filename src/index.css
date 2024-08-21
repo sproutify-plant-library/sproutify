@@ -157,7 +157,7 @@ button:focus-visible {
   color: #333;
 }
 
-.CreatePlant input[type="text"] , .EditPlant input {
+.CreatePlant input[type="text"], [type="link"], .EditPlant input {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -252,6 +252,13 @@ button:focus-visible {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.PlantDetails .wikiLink{
+  color:rgb(236, 180, 75);
+  text-decoration:underline;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .PlantDetails button:hover {

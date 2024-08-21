@@ -3,7 +3,7 @@ function Footer() {
 
     return (
       <>
-         <p>This is the Sproutify@2024</p> 
+         <p>Copyright © 2024 Sproutify - All right reserved</p> 
       </>
     )
   }

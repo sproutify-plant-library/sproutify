@@ -5,6 +5,7 @@ import { API_URL } from "../config/api";
 
 function CreatePlant() {
   const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
   const [scientificName, setScientificName] = useState("")
   const [description, setDescription] = useState("");
   const [water, setWater] = useState("");
@@ -20,6 +21,7 @@ function CreatePlant() {
 
     const newPlant = {
       title: title,
+      image: image,
       scientificName: scientificName,
       description: description,
       water: water,
@@ -53,6 +55,20 @@ function CreatePlant() {
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
+            }}
+          />
+        </label>
+
+        <label>
+          Image:
+          <input
+            type="link"
+            name="Image"
+            placeholder="Enter the Link for the image"
+            required
+            value={image}
+            onChange={(e) => {
+              setImage(e.target.value);
             }}
           />
         </label>

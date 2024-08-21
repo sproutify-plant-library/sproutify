@@ -43,14 +43,14 @@ function PlantDetails() {
           <h2>{plant.title}</h2>
           <h4> {plant.subtitle}</h4>
           <img src={plant.image} alt={plant.title} />
-          <p>Description: {plant.description}</p>
-          <p>Water Level: {plant.water}</p>
-          <p>Sun: {plant.sun}</p>
-          <p>Tips: {plant.tips}</p>
-          <p>Category: {plant.type}</p>
-          <p>Maintainance: {plant.maintenance}</p>
+          <p>{plant.description}</p>
+          <p>🚰  {plant.water}</p>
+          <p>☀️   {plant.sun}</p>
+          <p>📝  {plant.tips}</p>
+          <p>🏷️  {plant.type}</p>
+          <p>👩🏻‍🌾  {plant.maintenance} maintenance</p>
           <Link to={`${plant.wiki_link}`}>
-            <button className="wikiButton">WikiLink</button>
+            <p className="wikiLink">Wiki Link</p>
           </Link>
         </>
       )}
