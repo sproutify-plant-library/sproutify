@@ -94,6 +94,7 @@ button:focus-visible {
 }
 
 .card img {
+  flex: 1 1 auto;
   width: 40%;
   height: auto;
   border-radius: 8px;
@@ -296,4 +297,37 @@ button:focus-visible {
 
 .PlantDetails a button:focus {
   outline: 3px solid #bbdefb;
+}
+
+.footer {
+  background-color: #78b17156;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  color: rgb(53, 75, 66);
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+.searchContainer input {
+  width: 160px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.searchContainer input:focus {
+  border-color: #58a6ff;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 132, 255, 0.4);
 }

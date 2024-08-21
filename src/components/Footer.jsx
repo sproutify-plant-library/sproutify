@@ -1,11 +1,13 @@
+
+
 function Footer() {
   
 
     return (
-      <>
-         <p>Copyright © 2024 Sproutify - All right reserved</p> 
-      </>
-    )
-  }
+      <footer className="footer">
+      <p>Copyright © 2024 Sproutify - All rights reserved</p>
+    </footer>
+  );
+}
   
   export default Footer;
