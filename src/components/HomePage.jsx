@@ -52,20 +52,14 @@ function HomePage({ filter }) {
 
   return (
     <>
-      <div className="searchContainer">
+    <div className="searchContainer">
         <input
           type="text"
-          placeholder="Search for plants..."
+          placeholder="🔍  Search for plants..."
           value={searchTerm}
           onChange={handleSearchChange}
         />
-
-        <div className="createButtonContainer">
-          <Link to="/plant/create">
-            <button className="createButton">Create</button>
-          </Link>
         </div>
-      </div>
 
       <div className="plantList">
         {plants &&
@@ -74,7 +68,9 @@ function HomePage({ filter }) {
               <div className="card" key={elm.id}>
                 <Link to={`/plant/${elm.id}`}>
                   <h2>{elm.title}</h2>
-                  <img src={`${elm.image}`} alt={elm.title} />
+                  <div className="img-wrapper">
+                    <img src={`${elm.image}`} alt={elm.title} />
+                  </div>
                 </Link>
               </div>
             );
