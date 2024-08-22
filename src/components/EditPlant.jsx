@@ -7,6 +7,7 @@ import { API_URL } from "../config/api";
 
 function EditPlant() {
     const [title, setTitle] = useState("");
+    const [image, setImage] = useState("");
     const [subtitle, setSubtitle] = useState("");
     const [description, setDescription] = useState("");
     const [water, setWater] = useState("");
@@ -14,6 +15,7 @@ function EditPlant() {
     const [tips, setTips] = useState("");
     const [type, setType] = useState("");
     const [maintenance, setMaintenance] = useState("");
+    const [link, setLink] = useState("");
 
 
     const { plantId } = useParams();
@@ -25,6 +27,7 @@ function EditPlant() {
             .get(`${API_URL}/${plantId}`)
             .then((response) => {
                 setTitle(response.data.title);
+                setImage(response.data.image)
                 setSubtitle(response.data.subtitle);
                 setDescription(response.data.description);
                 setWater(response.data.water);
@@ -32,6 +35,7 @@ function EditPlant() {
                 setTips(response.data.tips);
                 setType(response.data.type);
                 setMaintenance(response.data.maintenance);
+                setLink(response.data.link);
             })
             .catch(error => console.log(error))
     }, [plantId]);
@@ -52,7 +56,7 @@ function EditPlant() {
 
         axios
             .put(`${API_URL}/${plantId}`, editDetails)
-            .then( response => navigate(`/plant/${plantId}`))
+            .then(response => navigate(`/plant/${plantId}`))
             .catch(error => console.log("Error updating plant", error))
     }
 
@@ -80,6 +84,17 @@ function EditPlant() {
                         name="subtitle"
                         value={subtitle}
                         onChange={(e) => setSubtitle(e.target.value)}
+                    />
+                </label>
+                <label>
+                    Image:
+                    <input
+                        type="link"
+                        name="Image"
+                        value={image}
+                        onChange={(e) => {
+                            setImage(e.target.value);
+                        }}
                     />
                 </label>
                 <label>
@@ -135,6 +150,17 @@ function EditPlant() {
                         name="maintenance"
                         value={maintenance}
                         onChange={(e) => setMaintenance(e.target.value)}
+                    />
+                </label>
+
+                <label>
+                    Wiki Link:
+                    <input
+                        type="text"
+                        name="wiki Link"
+                        required
+                        value={link}
+                        onChange={(e) => {setLink(e.target.value)}}
                     />
                 </label>
 
