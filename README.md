@@ -1,8 +1,25 @@
-# React + Vite
+![Sproutify_logo](public/images/Sproutify_logo.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project 2 | Sproutify
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+
+Plant library with CRUD functionalities (HTML, CSS, Javascript, React, Vite).
+
+
+## Setup
+
+- Fork this repo
+- Clone this repo
+
+```shell
+cd sproutify
+npm install
+npm run dev
+```
+
+
+## Demo 
+
+https://sproutify-project.netlify.app/
