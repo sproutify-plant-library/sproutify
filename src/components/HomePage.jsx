@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { API_URL } from "../config/api";
 
 
-function HomePage() {
+function HomePage({ filter }) {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -22,40 +22,51 @@ function HomePage() {
       );
   }, []);
 
-
   useEffect(() => {
-   
-    const results = plants.filter(plant =>
+    const results = plants.filter((plant) =>
       plant.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredPlants(results);
   }, [searchTerm, plants]);
 
-  if (plants.length === 0) {
-    return <div>Loading...</div>;
-  }
+
+  useEffect(() => {
+    if (filter) {
+      const filteredResults = plants.filter((plant) =>
+        plant.type.toLowerCase() === filter.toLowerCase()
+      );
+      setFilteredPlants(filteredResults);
+    } else {
+      setFilteredPlants(plants); 
+    }
+  }, [filter, plants]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  
+
+  if (plants.length === 0) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <>
-    <div className="searchContainer">
+      <div className="searchContainer">
         <input
           type="text"
           placeholder="Search for plants..."
           value={searchTerm}
           onChange={handleSearchChange}
-          />
+        />
+
+        <div className="createButtonContainer">
+          <Link to="/plant/create">
+            <button className="createButton">Create</button>
+          </Link>
+        </div>
       </div>
-    
-      <div className="createButtonContainer">
-        <Link to="/plant/create">
-          <button className="createButton">Create New Plant</button>
-        </Link>
-      </div>
+
       <div className="plantList">
         {plants &&
           filteredPlants.map((elm) => {
