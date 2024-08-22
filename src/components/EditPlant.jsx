@@ -7,15 +7,15 @@ import { API_URL } from "../config/api";
 
 function EditPlant() {
     const [title, setTitle] = useState("");
-    const [image, setImage] = useState("");
     const [subtitle, setSubtitle] = useState("");
+    const [image, setImage] = useState("");
     const [description, setDescription] = useState("");
     const [water, setWater] = useState("");
     const [sun, setSun] = useState("");
     const [tips, setTips] = useState("");
     const [type, setType] = useState("");
     const [maintenance, setMaintenance] = useState("");
-    const [link, setLink] = useState("");
+    const [wiki_link, setWikiLink] = useState("");
 
 
     const { plantId } = useParams();
@@ -27,15 +27,15 @@ function EditPlant() {
             .get(`${API_URL}/${plantId}`)
             .then((response) => {
                 setTitle(response.data.title);
-                setImage(response.data.image)
                 setSubtitle(response.data.subtitle);
+                setImage(response.data.image);
                 setDescription(response.data.description);
                 setWater(response.data.water);
                 setSun(response.data.sun);
                 setTips(response.data.tips);
                 setType(response.data.type);
                 setMaintenance(response.data.maintenance);
-                setLink(response.data.link);
+                setWikiLink(response.data.wiki_link);
             })
             .catch(error => console.log(error))
     }, [plantId]);
@@ -46,12 +46,14 @@ function EditPlant() {
         const editDetails = {
             title: title,
             subtitle: subtitle,
+            image: image,
             description: description,
             water: water,
             sun: sun,
             tips: tips,
             type: type,
-            maintenance: maintenance
+            maintenance: maintenance,
+            wiki_link: wiki_link,
         }
 
         axios
@@ -78,7 +80,7 @@ function EditPlant() {
                 </label>
 
                 <label>
-                    Subtitle:
+                    Scientific Name:
                     <input
                         type="text"
                         name="subtitle"
@@ -89,7 +91,7 @@ function EditPlant() {
                 <label>
                     Image:
                     <input
-                        type="link"
+                        type="url"
                         name="Image"
                         value={image}
                         onChange={(e) => {
@@ -158,9 +160,8 @@ function EditPlant() {
                     <input
                         type="text"
                         name="wiki Link"
-                        required
-                        value={link}
-                        onChange={(e) => {setLink(e.target.value)}}
+                        value={wiki_link}
+                        onChange={(e) => setWikiLink(e.target.value)}
                     />
                 </label>
 
