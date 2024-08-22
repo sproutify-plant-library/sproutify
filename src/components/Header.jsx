@@ -5,7 +5,7 @@ function Header({ onFilterChange }) {
     <>
       <header className="header">
         <Link to={`/`}>
-          <img src="../public/Sproutify_logo.png" alt="Sproutify Logo" />
+          <img src="/images/Sproutify_logo.png" alt="Sproutify Logo" />
         </Link>
       </header>
       <nav className="navbar">
