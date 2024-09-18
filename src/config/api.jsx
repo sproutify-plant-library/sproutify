@@ -1,1 +1,1 @@
-export const API_URL = `https://sproutify.adaptable.app/plants`
+export const API_URL = `https://json-server-backend-lwk8.onrender.com`
