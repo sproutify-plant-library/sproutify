@@ -34,7 +34,7 @@ function CreatePlant() {
     };
 
     axios
-      .post(`${API_URL}`, newPlant)
+      .post(`${API_URL}/plants`, newPlant)
       .then((response) => {
         const newPlantId = response.data.id;
         navigate(`/plant/${newPlantId}`);
