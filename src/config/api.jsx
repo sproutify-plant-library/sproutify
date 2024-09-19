@@ -1,1 +1,1 @@
-export const API_URL = "process.env.REACT_APP_API_URL"
+export const API_URL = "https://json-server-backend-lwk8.onrender.com"
