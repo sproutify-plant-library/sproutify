@@ -11,7 +11,7 @@ function HomePage({ filter }) {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}`)
+      .get(`${API_URL}/plants`)
       .then((response) => {
         const shuffledPlants = response.data.sort(() => 0.5 - Math.random()); // Shuffle the plants
         setPlants(shuffledPlants);
