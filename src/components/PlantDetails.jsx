@@ -23,7 +23,7 @@ function PlantDetails() {
 
   const deletePlant = () => {
     axios
-      .delete(`${API_URL}/${plantId}`)
+      .delete(`${API_URL}/plant/${plantId}`)
       .then((response) => navigate("/"))
       .catch((error) => console.log("Error deleting plant", error));
   };

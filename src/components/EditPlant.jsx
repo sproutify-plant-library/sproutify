@@ -24,7 +24,7 @@ function EditPlant() {
 
     useEffect(() => {
         axios
-            .get(`${API_URL}/plant/edit/${plantId}`)
+            .get(`${API_URL}/plant/${plantId}`)
             .then((response) => {
                 setTitle(response.data.title);
                 setSubtitle(response.data.subtitle);
@@ -57,7 +57,7 @@ function EditPlant() {
         }
 
         axios
-            .put(`${API_URL}/${plantId}`, editDetails)
+            .put(`${API_URL}/plant/edit/${plantId}`, editDetails)
             .then(response => navigate(`/plant/${plantId}`))
             .catch(error => console.log("Error updating plant", error))
     }
