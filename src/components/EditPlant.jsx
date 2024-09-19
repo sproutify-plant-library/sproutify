@@ -24,7 +24,7 @@ function EditPlant() {
 
     useEffect(() => {
         axios
-            .get(`${API_URL}/${plantId}`)
+            .get(`${API_URL}/plant/edit/${plantId}`)
             .then((response) => {
                 setTitle(response.data.title);
                 setSubtitle(response.data.subtitle);
