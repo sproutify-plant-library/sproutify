@@ -326,7 +326,10 @@ button:focus-visible {
 .footer {
   background-color: #78b17156;
   padding: 10px;
-  margin: 30px;
+  margin-bottom: 7px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 15px;
   text-align: center;
 }
 
