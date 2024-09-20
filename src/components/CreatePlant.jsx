@@ -34,8 +34,9 @@ function CreatePlant() {
     };
 
     axios
-      .post(`${API_URL}/plant/create`, newPlant)
+      .post(`${API_URL}/plants`, newPlant)
       .then((response) => {
+        console.log("Response:", response);
         const newPlantId = response.data.id;
         navigate(`/plant/${newPlantId}`);
       })
@@ -43,7 +44,7 @@ function CreatePlant() {
   };
 
   return (
-    <div className="CreatePlant">
+    <div className="CreatePlant"> 
       <h3> Add Plant </h3>
 
       <form onSubmit={handleSubmit}>

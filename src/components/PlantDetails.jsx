@@ -12,7 +12,7 @@ function PlantDetails() {
 
   const getPlant = () => {
     axios
-      .get(`${API_URL}/plant/${plantId}`)
+      .get(`${API_URL}/plants/${plantId}`)
       .then((response) => {
         setPlant(response.data);
       })
@@ -23,7 +23,7 @@ function PlantDetails() {
 
   const deletePlant = () => {
     axios
-      .delete(`${API_URL}/plant/${plantId}`)
+      .delete(`${API_URL}/plants/${plantId}`)
       .then((response) => navigate("/"))
       .catch((error) => console.log("Error deleting plant", error));
   };
